@@ -3,10 +3,12 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <h2>Ура</h2>
+    <h2>Ура {{cl}}</h2>
     <ul>
-      <li v-for="item in list">
-        {{item}}
+      <li :key="item" v-for="item in list">
+        <div>
+          {{item}}
+        </div>
       </li>
     </ul>
     
@@ -15,20 +17,20 @@
 
 <script>
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      list: [1,2,3,4,5,6],
-      cl: 'test'
-    }
+      msg: "Welcome to Your Vue.js App",
+      list: [1, 2, 3, 4, 5, 6],
+      cl: "test"
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -36,7 +38,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
@@ -47,6 +50,9 @@ ul {
 
 li {
   margin: 10px 0;
+  span {
+    display: inline-block;
+  }
 }
 
 a {
