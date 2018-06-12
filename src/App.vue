@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <h2>Ура</h2>
     <ul>
       <li v-for="item in list">
         {{item}}
